@@ -6,7 +6,7 @@ const { ERRORS, ActionExecutionError } = require('./error');
  * @param {number} time - The time to wait
  * @return {Promise<unknown>}
  */
-const wait = (time = 0) => new Promise((resolve) => setTimeout(resolve, time));  
+const wait = (time = 0) => new Promise((resolve) => setTimeout(resolve, time));
 
 /**
  * Delays a promise resolve with a given time.
