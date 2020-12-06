@@ -135,12 +135,13 @@ class ReadinessManager {
     }
 
     /**
-     * Tracks a given beacon action
-     * @param {Beacon} beacon
+     * Tracks a given beacon action.
+     * @param {Beacon} beacon - The beacon to execute.
+     * @param {Number} attempt - The attempt number of current beacon execution.
      * @throws {ActionExecutionError}
      * @private
      */
-    async [Symbols.execute](beacon) {
+    async [Symbols.execute](beacon, attempt = 1) {
         const { name, action } = beacon;
 
         const update = (status) => this[Symbols.updateBeacon](name, status);
@@ -161,8 +162,8 @@ class ReadinessManager {
 
             // Invokes consumer error hook with a retry method and the beacon error.
             this[Symbols.errorHandler](
-                new ActionExecutionError(name, error),
-                () => this[Symbols.execute](beacon)
+                new ActionExecutionError(name, attempt, error),
+                () => this[Symbols.execute](beacon, attempt + 1)
             );
         }
     }

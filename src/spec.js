@@ -247,7 +247,7 @@ describe('lib/readinessManager', () => {
 
             it('Triggers consumer handler with beacon execution error', () => {
                 expect(logger).toHaveBeenCalledWith(
-                    new ActionExecutionError('success', error)
+                    new ActionExecutionError('success', 0, error)
                 );
             });
         });
