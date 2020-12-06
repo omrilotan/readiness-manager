@@ -77,9 +77,16 @@ Registers a given callback on a specific action completion event.
 ### onError(errorHandler: ActionErrorHandler): void
 
 ```ts
-type ActionErrorHandler = (error: ActionExecutionError, retry: ActionRetry) => void;
+interface ActionExecutionError extends Error {
+    name: string;
+    stack: string;
+    attempt: number;
+    failReason: string;
+}
 
 type ActionRetry = () => Promise<void>;
+
+type ActionErrorHandler = (error: ActionExecutionError, retry: ActionRetry) => void;
 ```
 
 Registers given error handler under the `ReadinessManager`. Any error that will be thrown from execution one of the registered actions will trigger this handler.
@@ -121,7 +128,7 @@ ReadinessManager.register('action', unstableAction);
 
 ReadinessManager.onError((error, retry) => {
    console.log(error);
-   if (count <= 1) retry();
+   if (error.attempt <= 1) retry();
 });
 
 ReadinessManager.run();

@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.0.2 (7 December 2020)
+## 1.1.0 (6 December 2020)
 
 - Adding `attempt` over `ActionExecutionError`.
 
