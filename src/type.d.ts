@@ -15,6 +15,7 @@ type BeaconsMap = { [name: string] : Beacon };
 interface ActionExecutionError extends Error {
     name: string;
     stack: string;
+    attempt: number;
     failReason: string;
 }
 

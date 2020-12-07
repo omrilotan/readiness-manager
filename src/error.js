@@ -13,12 +13,13 @@ const ERRORS = {
  * @type {ActionExecutionError}
  */
 class ActionExecutionError extends Error {
-    constructor(name, error) {
+    constructor(name, attempt, error) {
         super();
 
         Object.assign(this, {
             message: ERRORS.BEACON_EXECUTION_FAILED,
             name,
+            attempt,
             stack: error.stack,
             failReason: error.message
         });
