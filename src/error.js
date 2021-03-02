@@ -28,12 +28,10 @@ class ActionExecutionError extends Error {
 
 /**
  * Default error handler to be triggered upon beacon errors.
- * @param retry - The retry function for that specific failing beacon.
  * @param beaconError - The beacon error that occur.
  * @type {ActionErrorHandler}
  */
 const defaultErrorHandler = (
-    retry, // eslint-disable-line no-unused-vars
     beaconError
 ) => console.log(beaconError); // eslint-disable-line no-console
 
