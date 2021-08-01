@@ -1,6 +1,13 @@
 # CHANGELOG
 
-## 1.1.1 (2 March 2020)
+## 1.1.2 (1 August 2021)
+
+### Bug Fixes
+
+- Align `package.json` `types` entry.
+- Fix `ReadinessManager` interface declaration.
+
+## 1.1.1 (2 March 2021)
 
 ### Bug Fixes
 
