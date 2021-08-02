@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 1.1.3 (2 August 2021)
+
+### Bug Fixes
+
+- Fix `test/mocks` manager types.
+
 ## 1.1.2 (1 August 2021)
 
 ### Bug Fixes
