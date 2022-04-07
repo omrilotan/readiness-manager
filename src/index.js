@@ -84,7 +84,7 @@ class ReadinessManager {
         readyState = false;
 
         Object.values(this[Symbols.beacons])
-            .map(this[Symbols.execute]);
+            .map((beacon) => this[Symbols.execute](beacon));
 
         return this;
     }

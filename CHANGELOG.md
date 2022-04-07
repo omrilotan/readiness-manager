@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.4 (7 April 2022)
+
+- Fix beacon initial execution, attempt was passed as index of the `forEach`.
+
 ## 1.1.3 (2 August 2021)
 
 ### Bug Fixes
